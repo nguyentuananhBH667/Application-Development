@@ -1,0 +1,240 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_green">
+
+    <!-- Back Button -->
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_back_button"
+        android:background="@null"
+        android:layout_margin="16dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:contentDescription="@string/back_button" />
+
+    <!-- Categories Title -->
+    <TextView
+        android:id="@+id/titleCategories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Categories"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/backButton"
+        android:layout_marginTop="16dp" />
+
+    <!-- Balance and Expense Info -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="32dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/titleCategories"
+        android:gravity="center_horizontal">
+
+        <!-- Total Balance and Total Expense Labels -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/labelTotalBalance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Balance"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:layout_margin="8dp" />
+
+            <TextView
+                android:id="@+id/labelTotalExpense"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Expense"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:layout_margin="8dp" />
+        </LinearLayout>
+
+        <!-- Balance and Expense Info -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/totalBalance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$7,783.00"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_margin="8dp" />
+
+            <TextView
+                android:id="@+id/totalExpense"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-$1,187.40"
+                android:textColor="@color/light_blue"
+                android:textSize="24sp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_margin="8dp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <!-- Category Icons -->
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:rowCount="2"
+        android:columnCount="2"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center">
+
+        <!-- Food Category -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            android:padding="8dp">
+
+
+            <ImageView
+                android:id="@+id/categoryFood"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/food"
+                android:contentDescription="@string/food"
+                android:onClick="openFoodActivity" />
+            />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Food"
+                android:gravity="center"
+                android:layout_marginTop="8dp" />
+        </LinearLayout>
+
+        <!-- Transport Category -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/categoryTransport"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_transport"
+                android:onClick="openTransportActivity"
+                android:contentDescription="@string/transport" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Transport"
+                android:gravity="center"
+                android:layout_marginTop="8dp" />
+        </LinearLayout>
+
+        <!-- Medicine Category -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/categoryMedicine"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_medicine"
+                android:onClick="openMedicineActivity"
+                android:contentDescription="@string/medicine" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Medicine"
+                android:gravity="center"
+                android:layout_marginTop="8dp" />
+        </LinearLayout>
+
+        <!-- More Category -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/categoryRent"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/rent"
+                android:onClick="openRentActivity"
+                android:contentDescription="@string/rent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rent"
+                android:gravity="center"
+                android:layout_marginTop="8dp" />
+        </LinearLayout>
+    </GridLayout>
+
+    <!-- Bottom Navigation Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:background="@color/light_gray">
+
+        <!-- Home -->
+
+
+        <!-- Categories -->
+        <ImageButton
+            android:padding="30px"
+            android:id="@+id/nav_categories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_category"
+            android:background="@null"
+            android:contentDescription="@string/categories" />
+
+        <!-- Profile -->
+        <ImageButton
+            android:padding="30px"
+            android:id="@+id/nav_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_profile"
+            android:background="@null"
+            android:contentDescription="@string/profile"
+            android:onClick="openProfileActivity"/>
+    </LinearLayout>
+</RelativeLayout>
